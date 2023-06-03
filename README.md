@@ -24,8 +24,8 @@
 ⋆⃟⋆⃟🌿 pkg install ffmpeg -y 
 ⋆⃟⋆⃟🐢 pkg install wget
 ⋆⃟⋆⃟🌿 pkg install imagemagick -y
-⋆⃟⋆⃟🐢 git clone https://github.com/Confusion245/ConfuB
-⋆⃟⋆⃟🌿 cd ConfuBot4
+⋆⃟⋆⃟🐢 git clone https://github.com/kriz2004
+⋆⃟⋆⃟🌿 cd MeguBot-Simple
 ⋆⃟⋆⃟🐢 npm install
 ⋆⃟⋆⃟🌿 npm start
 ⋆⃟⋆⃟🐢 escanea el código qr en 30 segundos
