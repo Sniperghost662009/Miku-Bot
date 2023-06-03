@@ -1,18 +1,10 @@
-<div align="center">
-<img src="https://i.ibb.co/S37DL7B/images-1-1.jpg" alt="Kriz" width="170" />
-
-## Megu - Bot 🔥
-
-
-
-
-
-</p>
 <p align="center">
-  <a href="https://github.com/kriz2004"><img title="Author" src="https://img.shields.io/badge/Author-Kriz-Repos-blue.svg?style=for-the-badge&logo=github" /></a>
+<img src="https://i.ibb.co/Wzw06r1/Gwar-Gura-Gura-GIF-Gwar-Gura-Gura-Discover-Share-GIFs.gif" width="150" height="150"/>
 </p>
+<h1 align='center'>Hola👋 :wave:</h1>
+<p align='center'>Hola, soy Kriz y gracias por visitar mi perfil de github.</p>
 <p align="center">
-<a href="#"><img title="Kriz" src="https://img.shields.io/static/v1?label=WhatsApp&message=Bot&color=blue"></a>
+<a href="By Kriz"><img align="center" src="https://cardivo.vercel.app/api?name=Kriz2004&description=Hola,%20como%20estas%20espero%20tengas%20un%20lindo%20dia%20o%20noche%20uwu%20%F0%9F%91%8B&image=https://i.ibb.co/Wzw06r1/Gwar-Gura-Gura-GIF-Gwar-Gura-Gura-Discover-Share-GIFs.gif&usqp=CAU&backgroundColor=%23ecf0f1&github=Kriz2004&pattern=ticTacToe&colorPattern=%23eaeaea&site=https://youtube.com/@Kriz_Chaan"/></a>
 </p>
 
 # Requisitos
