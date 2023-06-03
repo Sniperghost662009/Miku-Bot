@@ -16,19 +16,19 @@
 
 ##Instalacion en Termux 
 ```bash
-⋆⃟⋆⃟🐢 apt update
-⋆⃟⋆⃟🌿 apt upgrade
-⋆⃟⋆⃟🐢 pkg update && pkg upgrade
-⋆⃟⋆⃟🌿 pkg install git -y
-⋆⃟⋆⃟🐢 pkg install nodejs -y 
-⋆⃟⋆⃟🌿 pkg install ffmpeg -y 
-⋆⃟⋆⃟🐢 pkg install wget
-⋆⃟⋆⃟🌿 pkg install imagemagick -y
-⋆⃟⋆⃟🐢 git clone https://github.com/kriz2004
-⋆⃟⋆⃟🌿 cd MeguBot-Simple
-⋆⃟⋆⃟🐢 npm install
-⋆⃟⋆⃟🌿 npm start
-⋆⃟⋆⃟🐢 escanea el código qr en 30 segundos
+⋆⃟⋆⃟🦈 apt update
+⋆⃟⋆⃟🦈 apt upgrade
+⋆⃟⋆⃟🦈 pkg update && pkg upgrade
+⋆⃟⋆⃟🦈 pkg install git 
+⋆⃟⋆⃟🦈 pkg install nodejs
+⋆⃟⋆⃟🦈 pkg install ffmpeg 
+⋆⃟⋆⃟🦈 pkg install wget
+⋆⃟⋆⃟🦈 pkg install imagemagick 
+⋆⃟⋆⃟🦈 git clone https://github.com/kriz2004/MeguBot-Simple
+⋆⃟⋆⃟🦈 cd MeguBot-Simple
+⋆⃟⋆⃟🦈 npm install
+⋆⃟⋆⃟🦈 npm start
+⋆⃟⋆⃟🦈 escanea el código qr en 30 segundos
 ```
 
 ## Conectate conmigo
