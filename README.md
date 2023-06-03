@@ -1,5 +1,5 @@
-<p align="center">
-<img src="https://i.ibb.co/Wzw06r1/Gwar-Gura-Gura-GIF-Gwar-Gura-Gura-Discover-Share-GIFs.gif" width="150" height="150"/>
+
+
 </p>
 <h1 align='center'>Hola👋 :wave:</h1>
 <p align='center'>Hola, soy Kriz y gracias por visitar mi perfil de github.</p>
