@@ -3,7 +3,7 @@ const fs = require('fs')
 const chalk = require('chalk')
 
 //Apikeys
-global.apikey = 'Confusion245' //Apikey consigue en api.lolhuman.xyz
+global.apikey = '' //Apikey consigue en api.lolhuman.xyz
 global.rosekey = '1959c5deed0becdba64eb1d1'
 
 //—————「 Bot - Creador 」—————//
