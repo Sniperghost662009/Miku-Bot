@@ -21,7 +21,7 @@
   "author": "kriz2004",
   "license": "MIT",
   "dependencies": {
-    "@adiwajshing/baileys" : "github:kriz2004/Baileys",
+    "@adiwajshing/baileys" : "npm:baileys@^6.0.9",
     "@adiwajshing/keyed-db": "^0.2.4",
     "@ffmpeg-installer/ffmpeg": "^1.1.0",
     "@bochilteam/scraper": "^4.0.22-alpha.0",
