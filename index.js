@@ -130,32 +130,32 @@ async function startcnf() {
 			if (res.announce == true) {
 				await sleep(2000)
 				conn.sendMessage(res.id, {
-					text: `「 Group Settings Change 」\n\nGroup telah ditutup oleh admin, Sekarang hanya admin yang dapat mengirim pesan !`,
+					text: `「 GRUPO 」\n\nEl grupo ha sido cerrado por el administrador, ahora solo el administrador puede enviar mensajes !`,
 				});
 			} else if (res.announce == false) {
 				await sleep(2000)
 				conn.sendMessage(res.id, {
-					text: `「 Group Settings Change 」\n\nGroup telah dibuka oleh admin, Sekarang peserta dapat mengirim pesan !`,
+					text: `「 GRUPO 」\n\nEl administrador ha abierto el grupo. ¡Ahora los participantes pueden enviar mensajes!`,
 				});
 			} else if (res.restrict == true) {
 				await sleep(2000)
 				conn.sendMessage(res.id, {
-					text: `「 Group Settings Change 」\n\nInfo group telah dibatasi, Sekarang hanya admin yang dapat mengedit info group !`,
+					text: `「 GRUPO 」\n\nLa información del grupo se ha restringido. ¡Ahora solo el administrador puede editar la información del grupo!`,
 				});
 			} else if (res.restrict == false) {
 				await sleep(2000)
 				conn.sendMessage(res.id, {
-					text: `「 Group Settings Change 」\n\nInfo group telah dibuka, Sekarang peserta dapat mengedit info group !`,
+					text: `「 GRUPO 」\n\nSe ha abierto la información del grupo. ¡Ahora el participante puede editar la información del grupo`,
 				});
 			} else if(!res.desc == ''){
 				await sleep(2000)
 				conn.sendMessage(res.id, {
-					text: `「 Group Settings Change 」\n\n*Group desk telah diganti menjadi*\n\n${res.desc}`,
+					text: `「 GRUPO 」\n\n*El escritorio de grupo se ha cambiado a*\n\n${res.desc}`,
 				});
       } else {
 				await sleep(2000)
 				conn.sendMessage(res.id, {
-					text: `「 Group Settings Change 」\n\n*Group Subject telah diganti menjadi*\n\n*${res.subject}*`,
+					text: `「 GRUPO  」\n\n*El asunto del grupo se ha cambiado a*\n\n*${res.subject}*`,
 				});
 			} 
 			
