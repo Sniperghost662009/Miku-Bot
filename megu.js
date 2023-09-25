@@ -1,4 +1,4 @@
-/*By KrizChaan 🔱🦈*/
+/*By Snipe 🔱🦈*/
 require('./config')
 const { BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, proto, generateWAMessageContent, generateWAMessage, prepareWAMessageMedia, areJidsSameUser, getContentType } = require('@adiwajshing/baileys')
 const fs = require('fs')
@@ -110,7 +110,7 @@ module.exports = conn = async (conn, m, chatUpdate, store) => {
                     thumbnail: thumb,
                     surface: 200,
                     message: `${namaowner}`,
-                    orderTitle: 'By KrizChaan 🔱',
+                    orderTitle: 'By Snipe 🔱',
                     sellerJid: '0@s.whatsapp.net'
                 }
             },
@@ -247,7 +247,7 @@ function pickRandom(list) {
 	    if (new Date() * 1 - setting.status > 1000) {
 		let _uptime = process.uptime() * 1000
 		let uptime = clockString(_uptime)
-		await conn.updateProfileStatus(`*Megu - Bot 🔥*\nBy KrizChaan 💞`).catch(_ => _)
+		await conn.updateProfileStatus(`*Megu - Bot 🔥*\nBy Snipe 💞`).catch(_ => _)
 		setting.status = new Date() * 1
 	    }
 	    }
@@ -281,7 +281,7 @@ function pickRandom(list) {
                 let isgclink = isLinkThisGc.test(m.text)
                 if (isgclink) return newReply(`Ehh Lo siento, no funciona, el enlace es de este grupo 😆`)
                 if (isAdmins) return newReply(`Eres admin no funciona contigo 7-7`)
-                if (isCreator) return newReply(`eres mi creador a ti no te puedo eliminar UwU`)
+                if (isCreator) return newReply(`eres mi Dios a ti no te puedo eliminar `)
                 conn.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
             }
         }
@@ -291,7 +291,7 @@ function pickRandom(list) {
                 newReply(`「 ANTI YT 」\n\nSe te detectó enviando un enlace de Youtube, lo sentimos, ¡serás expulsado!`)
                 if (!isBotAdmins) return newReply(`No soy admin 7-7`)
                 if (isAdmins) return newReply(`Eres admin 😁`)
-                if (isCreator) return newReply(`no puedo sacarte porque eres mi creador uwu`)
+                if (isCreator) return newReply(`no puedo sacarte porque eres mi creador `)
                 conn.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
             }
         }
@@ -462,7 +462,7 @@ function pickRandom(list) {
         break
         case 'wm': {
                 if (!isCreator) return newReply(mess.owner)
-                if (!text) return newReply(`Ejemplo : ${prefix + command} Megu - bot 🔥|by krizchaan`)
+                if (!text) return newReply(`Ejemplo : ${prefix + command} Megu - bot 🔥|by Snipe`)
                 global.packname = text.split("|")[0]
                 global.author = text.split("|")[1]
                 newReply(`sticker cambió con éxito a\n\n• Paquete : ${global.packname}\n• Autor : ${global.author}`)
