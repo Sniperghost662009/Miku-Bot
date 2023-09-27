@@ -1,7 +1,4 @@
-
-
-href="https://imgbb.com/"><img src="https://i.ibb.co/H7MkMjc/giphy.webp" alt="giphy" border="0" ><
-
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/H7MkMjc/giphy.webp" alt="giphy" border="0" /></a>
 # Requisitos
 * [Node.js](https://nodejs.org/en/)
 * [Git](https://git-scm.com/downloads)
