@@ -1,61 +1,91 @@
-// require("http").createServer((_, res) => res.end("Uptime!")).listen(8080)
-require('./config')
-const { default: connConnect, useMultiFileAuthState, DisconnectReason, fetchLatestBaileysVersion, generateForwardMessageContent, prepareWAMessageMedia, generateWAMessageFromContent, generateMessageID, downloadContentFromMessage, makeInMemoryStore, jidDecode, proto } = require("@adiwajshing/baileys")
-const pino = require('pino')
-const lolcatjs = require('lolcatjs')
-const { Boom } = require('@hapi/boom')
-const fs = require('fs')
-const yargs = require('yargs/yargs')
-const chalk = require('chalk')
-const FileType = require('file-type')
-const path = require('path')
-const _ = require('lodash')
-const axios = require('axios')
-const PhoneNumber = require('awesome-phonenumber')
-const { imageToWebp, videoToWebp, writeExifImg, writeExifVid } = require('./lib/exif')
-const { smsg, isUrl, generateMessageTag, getBuffer, getSizeMedia, fetchJson, sleep, reSize } = require('./lib/myfunc')
+console.log('✅ Iniciando...')
 
-var low
-try {
-  low = require('lowdb')
-} catch (e) {
-  low = require('./lib/lowdb')
+import { join, dirname } from 'path'
+import { createRequire } from 'module';
+import { fileURLToPath } from 'url'
+import { setupMaster, fork } from 'cluster'
+import { watchFile, unwatchFile } from 'fs'
+import cfonts from 'cfonts';
+import { createInterface } from 'readline'
+import yargs from 'yargs'
+import express from 'express'
+import chalk from 'chalk'
+import path from 'path'
+import os from 'os'
+import { promises as fsPromises } from 'fs'
+
+// https://stackoverflow.com/a/50052194
+const __dirname = dirname(fileURLToPath(import.meta.url))
+const require = createRequire(__dirname) // Bring in the ability to create the 'require' method
+const { name, author } = require(join(__dirname, './package.json')) // https://www.stefanjudis.com/snippets/how-to-import-json-files-in-es-modules-node-js/
+const { say } = cfonts
+const rl = createInterface(process.stdin, process.stdout)
+
+const app = express()
+const port = process.env.PORT || 8080;
+
+say('Tryzer- MD', {
+font: 'chrome',
+align: 'center',
+gradient: ['red', 'magenta']})
+say(`Simple WhatsApp Bot Multi Device`, {
+font: 'console',
+align: 'center',
+gradient: ['red', 'magenta']})
+
+var isRunning = false
+
+async function start(file) {
+  if (isRunning) return
+  isRunning = true
+  const currentFilePath = new URL(import.meta.url).pathname
+  let args = [join(__dirname, file), ...process.argv.slice(2)]
+  say([process.argv[0], ...args].join(' '), {
+    font: 'console',
+    align: 'center',
+    gradient: ['red', 'magenta']
+  })
+  setupMaster({
+    exec: args[0],
+    args: args.slice(1),
+  })
+  let p = fork()
+  p.on('message', data => {
+    console.log('[RECEIVED]', data)
+    switch (data) {
+      case 'reset':
+        p.process.kill()
+        isRunning = false
+        start.apply(this, arguments)
+        break
+      case 'uptime':
+        p.send(process.uptime())
+        break
+    }
+  })
+  //---
+  p.on('exit', (_, code) => {
+    isRunning = false
+    console.error('❎ Ocurrió un error inesperado:', code)
+    start('main.js'); //
+
+    if (code === 0) return
+    watchFile(args[0], () => {
+      unwatchFile(args[0])
+      start(file)
+    })
+  })
+  
+  //----
+  let opts = new Object(yargs(process.argv.slice(2)).exitProcess(false).parse())
+  if (!opts['test'])
+    if (!rl.listenerCount()) rl.on('line', line => {
+      p.emit('message', line.trim())
+    })
+  // console.log(p)
 }
 
-const { Low, JSONFile } = low
-const mongoDB = require('./lib/mongoDB')
-
-const store = makeInMemoryStore({ logger: pino().child({ level: 'silent', stream: 'store' }) })
-
-global.opts = new Object(yargs(process.argv.slice(2)).exitProcess(false).parse())
-global.db = new Low(
-  /https?:\/\//.test(opts['db'] || '') ?
-    new cloudDBAdapter(opts['db']) : /mongodb/.test(opts['db']) ?
-      new mongoDB(opts['db']) :
-      new JSONFile(`src/database.json`)
-)
-global.DATABASE = global.db // Backwards Compatibility
-global.loadDatabase = async function loadDatabase() {
-  if (global.db.READ) return new Promise((resolve) => setInterval(function () { (!global.db.READ ? (clearInterval(this), resolve(global.db.data == null ? global.loadDatabase() : global.db.data)) : null) }, 1 * 1000))
-  if (global.db.data !== null) return
-  global.db.READ = true
-  await global.db.read()
-  global.db.READ = false
-  global.db.data = {
-    users: {},
-    group: {},
-    chats: {},
-    database: {},
-    settings: {},
-    donate: {},
-    others: {},
-    sticker: {},
-    ...(global.db.data || {})
-  }
-  global.db.chain = _.chain(global.db.data)
-}
-loadDatabase()
-
+start('main.js')
 //30 segundos
 if (global.db) setInterval(async () => {
     if (global.db.data) await global.db.write()
